@@ -47,7 +47,9 @@ class RedisSupervisorRepository implements SupervisorRepository
      */
     public function all()
     {
-        return $this->get($this->names());
+        $names = $this->names();
+        if (!is_array($names)) $names = [];
+        return $this->get($names);
     }
 
     /**
@@ -76,7 +78,8 @@ class RedisSupervisorRepository implements SupervisorRepository
         });
 
         return collect($records)->filter()->map(function ($record) {
-            $record = array_values($record);
+            if(is_array($record)) $record = array_values($record);
+            else $record = [];
 
             return ! $record[0] ? null : (object) [
                 'name' => $record[0],

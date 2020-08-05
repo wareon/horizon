@@ -1,7 +1,7 @@
 {
-    "name": "laravel/horizon",
+    "name": "wareon/horizon",
     "description": "Dashboard and code-driven configuration for Laravel queues.",
-    "keywords": ["laravel", "queue"],
+    "keywords": ["laravel", "queue", "wareon", "horizon"],
     "license": "MIT",
     "authors": [
         {
